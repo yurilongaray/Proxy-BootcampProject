@@ -13,8 +13,8 @@ app.use(function(_, res, next) {
 });
 
 app
-  .get('/events', (req, res) => {
-    const URL = 'https://api.meetup.com/find/upcoming_events'
+  .get('/groups', (req, res) => {
+    const URL = 'https://api.meetup.com/find/groups'
 
     request.get({ url: URL, qs: req.query, json: true }, (err, _, body) => {
       err ? res.json(err) : res.json(body)
